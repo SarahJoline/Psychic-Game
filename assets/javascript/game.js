@@ -26,6 +26,7 @@ var alphabet = [
   "y",
   "z"
 ];
+
 var wins = 0;
 var losses = 0;
 
@@ -38,7 +39,7 @@ function restart() {
   console.log(letter);
 
   document.onkeyup = function(event) {
-    var userGuess = event.key;
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
     var doubles = alreadyGuessed.includes(userGuess);
     var validKeys = alphabet.includes(userGuess);
     if (doubles) {
@@ -70,5 +71,3 @@ function restart() {
     }
   };
 }
-
-
